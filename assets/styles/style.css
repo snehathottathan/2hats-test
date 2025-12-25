@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    height: 100vh;
+}
+
+body {
+
+    background: #fff;
+    overflow-x: hidden;
+}
+
+/* Desktop layout*/
+
+@media (width>=993px) {
+    .container {
+        display: grid;
+        grid-template-columns: 65% 35%;
+        grid-template-areas:
+            "header right"
+            "left right"
+            "footer right";
+    }
+
+
+    .main {
+        display: contents;
+    }
+
+    .primary {
+        width: 198px;
+    }
+
+    .header {
+        grid-area: header;
+        padding: 40px 0 20px 80px;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 40px;
+    }
+
+    .left {
+        grid-area: left;
+        padding: 20px 40px 40px 80px;
+    }
+
+    .right {
+        grid-area: right;
+        padding: 60px 80px 60px 20px;
+        align-self: center;
+       background-image: url('../images/Vector.png');
+        background-color: #F1F6FE;
+        height: 100vh;
+    }
+
+    .footer {
+        grid-area: footer;
+        width: 100%;
+        padding: 40px 40px 40px 80px;
+        justify-content: space-between;
+        gap: 60px;
+        background-color: #ff9257;
+        color: white;
+        display: flex;
+        align-items: center;
+    }
+
+    .stats {
+        width: 12rem;
+        padding-left: 26px;
+        border-left: 3px solid #F7BE2C;
+    }
+}
+
+
+/* global styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 40px;
+    }
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    color: #888;
+    font-weight: 600;
+
+    li.active {
+        color: #000;
+        border-bottom: 2px solid #2f80ed;
+    }
+}
+
+.left {
+    h1 {
+        font-size: 52px;
+        line-height: 1.2;
+        margin-bottom: 24px;
+        font-weight: 800;
+    }
+
+    p {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 12px;
+        max-width: 500px;
+    }
+}
+
+.star {
+    
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: #FF9257;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.students {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.count h3 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.avatars img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    /* object-fit: cover; */
+
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.primary {
+    background: #2f584e;
+    color: #fff;
+    border: none;
+    padding: 18px 38px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.secondary {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+        height: 38px;
+        width: 38px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+    }
+}
+
+.circle {
+    border-radius: 50%;
+
+}
+
+.rounded {
+    border-radius: 24px;
+}
+
+.footer {
+    background: #ff9257;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.stats {
+    h2 {
+        font-size: 32px;
+        margin-bottom: 4px;
+    }
+
+    p {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+}
+
+/* Mobile responsive*/
+
+@media (width <=992px) {
+    .header {
+        display: flex;
+        padding: 30px 33px;
+        gap: 45px;
+    }
+
+    .primary {
+        padding: 10px 22px;
+    }
+
+    .secondary img {
+        height: 28px;
+        width: 28px;
+    }
+
+    .span {
+        font-size: 10px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        img {
+            width: 26px;
+        }
+    }
+
+    nav ul {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .right {
+        background-image: url('../images/Vector.png');
+        background-color: #f1f6fe;
+    }
+
+    .left,
+    .right {
+        padding: 6px 33px;
+        width: 100%;
+    }
+
+    .left h1 {
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+
+    /* .footer {
+        font-size: 28px;
+        margin-bottom: 16px;
+    } */
+
+    .footer {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        padding: 40px 20px;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .grid {
+       padding-top: 1rem;
+       padding-bottom: 1rem;
+    }
+    .stats{ 
+        padding-left: 16px;
+        border-left: 2px solid #f7be2c;
+        h2 {
+            font-size: 22px;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+    }
+
+    .left p {
+        font-size: 11px;
+    }
+}
+
+/* Tablet view*/
+
+@media (768px <=width<=992px) {
+
+    .header {
+        padding: 30px 40px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    nav ul {
+        gap: 20px;
+        font-size: 15px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        padding: 40px;
+
+        h1 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 15px;
+        }
+    }
+
+    .right {
+        padding: 40px;
+        background-image: url('../images/Vector.png');
+        background-color: #f1f6fe;
+    }
+
+    .grid {
+        gap: 16px;
+    }
+
+    .footer {
+        padding: 40px;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .stats {
+        width: auto;
+        padding-left: 20px;
+        border-left: 3px solid #f7be2c;
+
+        h2 {
+            font-size: 26px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+}
